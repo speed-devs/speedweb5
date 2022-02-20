@@ -1,0 +1,23 @@
+{
+    "name": "speed-devs/speedweb5",
+    "description": "PHP MVC Framework",
+    "type": "framework",
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alper Dursun",
+            "email": "dursunalper1@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0.2",
+        "jenssegers/blade": "^1.4",
+        "vlucas/phpdotenv": "^5.4",
+        "ext-pdo": "*",
+        "speed-devs/framework": "^0.2.0"
+    }
+}

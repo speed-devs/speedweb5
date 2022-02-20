@@ -1,0 +1,22 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+$dotenv = \Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+$app = new \speedweb\core\Application(__DIR__, get_config());
+
+if(count($argv) == 2){
+    $last = end($argv);
+    switch($last){
+        case 'migrate':
+            $db = new \speedweb\core\Database(get_config()['db']);
+            $db->applyMigrations();
+        break;
+        default:
+            echo "wrong command";
+        break;
+    }
+}
